@@ -1,0 +1,11 @@
+name: Movies
+modelClass: Mikus\Movies\Models\Movie
+form: $/mikus/movies/models/movie/fields.yaml
+defaultRedirect: mikus/movies/movies
+create:
+    redirect: 'mikus/movies/movies/update/:id'
+    redirectClose: mikus/movies/movies
+update:
+    redirect: mikus/movies/movies
+    redirectClose: mikus/movies/movies
+preview: {  }

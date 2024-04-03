@@ -1,0 +1,20 @@
+##
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projekts</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="turbo-visit-control" content="reload" />
+    </head>
+    <body class="layout-home">
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+    </body>
+</html>

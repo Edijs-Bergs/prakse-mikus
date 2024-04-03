@@ -1,0 +1,11 @@
+plugin:
+    name: 'mikus.movies::lang.plugin.name'
+    description: 'mikus.movies::lang.plugin.description'
+    author: Mikus
+    icon: oc-icon-video-camera
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Movies
+        url: mikus/movies/movies
+        icon: icon-video-camera
