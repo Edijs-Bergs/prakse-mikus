@@ -8,13 +8,19 @@ description = "Default layout"
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="turbo-visit-control" content="reload" />
+        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
     </head>
     <body class="layout-home">
 
+
+        {% partial "header" %}
+
         <!-- Content -->
-        <section id="layout-content">
+        <section id="layout-content" class="container clearfix">
             {% page %}
         </section>
+
+        {% partial "footer" %}
 
     </body>
 </html>
