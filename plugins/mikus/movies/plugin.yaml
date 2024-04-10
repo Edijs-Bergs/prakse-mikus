@@ -9,3 +9,12 @@ navigation:
         label: Movies
         url: mikus/movies/movies
         icon: icon-video-camera
+        sideMenu:
+            side-menu-item2:
+                label: Movies
+                url: mikus/movies/movies
+                icon: icon-video-camera
+            side-menu-item:
+                label: Genres
+                url: mikus/movies/genres
+                icon: icon-tag

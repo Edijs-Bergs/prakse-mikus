@@ -1,0 +1,50 @@
+url = "/movies/movie/:slug"
+layout = "default"
+title = "Movie single"
+
+[builderDetails]
+modelClass = "Mikus\Movies\Models\Movie"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "name"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    <h2>{{ record.name }}</h2>
+
+    <img src="{{ record.poster.thumb(200,auto) }}">
+
+    <h2>Year: {{ record.year }}</h2>
+
+    <h2>Description</h2>
+    {{ record.description|raw }}
+
+    <h3>Gallery</h3>
+
+    <ul class="gallery">
+
+    {% for image in record.movie_gallery %}
+
+        <li>
+
+            <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}">
+
+        </li>
+
+    {% endfor %}
+
+    </ul>
+
+    <h3>Genres</h3>
+
+    {% for genre in record.genres %}
+        <a href="/projekts/genres/{{ genre.slug }}">{{ genre.genre_title }}</a><br>
+    {% endfor %}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}

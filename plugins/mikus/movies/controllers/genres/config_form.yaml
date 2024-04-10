@@ -1,0 +1,10 @@
+name: Genres
+form: $/mikus/movies/models/genre/fields.yaml
+modelClass: Mikus\Movies\Models\Genre
+defaultRedirect: mikus/movies/genres
+create:
+    redirect: 'mikus/movies/genres/update/:id'
+    redirectClose: mikus/movies/genres
+update:
+    redirect: mikus/movies/genres
+    redirectClose: mikus/movies/genres
