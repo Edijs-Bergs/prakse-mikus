@@ -26,7 +26,7 @@ class Movie extends Model
     public $rules = [
     ];
 
-    protected $jsonable = ['actors'];
+    //protected $jsonable = ['actors'];
 
     /* Relations */
 
@@ -35,6 +35,11 @@ class Movie extends Model
             'Mikus\Movies\Models\Genre',
             'table' => 'mikus_movies_movies_genres',
             'order' => 'genre_title'
+        ],
+        'actors' =>[
+            'Mikus\Movies\Models\Actor',
+            'table' => 'mikus_movies_actors_movies',
+            'order' => 'name'
         ]
     ];
 

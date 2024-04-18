@@ -18,7 +18,8 @@
 }
 
 .main-nav ul,
-.record-list {
+.record-list,
+.container ul {
     list-style-type: none;
     margin: 0;
     padding: 0;

@@ -1,6 +1,10 @@
 url = "/"
 layout = "default"
 title = "Homepage"
+
+[actors]
+results = 0
+sortOrder = "name desc"
 ==
 <h1>SVEIKI!</h1>
 
@@ -46,3 +50,4 @@ title = "Homepage"
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br>
     when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 </p><br>
+{% component 'actors' %}

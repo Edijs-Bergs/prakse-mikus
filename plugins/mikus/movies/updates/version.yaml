@@ -15,3 +15,12 @@ v1.0.5:
 v1.0.6:
     - 'Updated table mikus_movies_'
     - builder_table_update_mikus_movies__2.php
+v1.0.7:
+    - 'Created table mikus_movies_actors'
+    - builder_table_create_mikus_movies_actors.php
+v1.0.8:
+    - 'Updated table mikus_movies_'
+    - builder_table_update_mikus_movies__3.php
+v1.0.9:
+    - 'Created table mikus_movies_actors_movies'
+    - builder_table_create_mikus_movies_actors_movies.php

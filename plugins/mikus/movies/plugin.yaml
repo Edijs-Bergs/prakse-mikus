@@ -18,3 +18,7 @@ navigation:
                 label: Genres
                 url: mikus/movies/genres
                 icon: icon-tag
+            side-menu-item3:
+                label: Actors
+                url: mikus/movies/actor
+                icon: icon-user

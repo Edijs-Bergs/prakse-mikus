@@ -26,6 +26,19 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
+        return [
+            'Mikus\Movies\components\actors' => 'actors'
+        ];
+    }
+
+    public function registerFormWidgets()
+    {
+        return [
+            'Mikus\Movies\formwidgets\actorbox' => [
+                'label' => 'Actorbox field',
+                'code' => 'actorbox'
+            ]
+        ];
     }
 
     /**

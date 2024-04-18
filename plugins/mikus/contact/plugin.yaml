@@ -1,0 +1,6 @@
+plugin:
+    name: 'mikus.contact::lang.plugin.name'
+    description: 'mikus.contact::lang.plugin.description'
+    author: mikus
+    icon: oc-icon-adjust
+    homepage: ''

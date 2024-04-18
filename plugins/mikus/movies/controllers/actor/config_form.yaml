@@ -1,0 +1,10 @@
+name: Actor
+form: $/mikus/movies/models/actor/fields.yaml
+modelClass: Mikus\Movies\Models\Actor
+defaultRedirect: mikus/movies/actor
+create:
+    redirect: 'mikus/movies/actor/update/:id'
+    redirectClose: mikus/movies/actor
+update:
+    redirect: mikus/movies/actor
+    redirectClose: mikus/movies/actor
