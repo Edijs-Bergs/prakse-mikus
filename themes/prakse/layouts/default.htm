@@ -1,5 +1,8 @@
 ##
 description = "Default layout"
+
+[session]
+security = "all"
 ==
 <!DOCTYPE html>
 <html>
@@ -22,5 +25,26 @@ description = "Default layout"
 
         {% partial "footer" %}
 
+        <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/dist/js/app.js'|theme }}"></script>
+
+        <script type="text/javascript">
+
+        jQuery(document).ready(function($){
+            $('.contact-form').on('ajaxError', function(event, message){
+                $('.flash').removeClass('active');
+                $('.flash.error').addClass('active');
+            });
+
+            $('.contact-form').on('ajaxSuccess', function(event, message){
+                $('.flash').removeClass('active');
+                $('.flash.success').addClass('active');
+            });
+        });
+
+        </script>
+
+        {% framework extras %}
+        {% scripts %}
     </body>
 </html>

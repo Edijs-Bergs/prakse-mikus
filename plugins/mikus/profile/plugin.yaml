@@ -1,0 +1,6 @@
+plugin:
+    name: 'mikus.profile::lang.plugin.name'
+    description: 'mikus.profile::lang.plugin.description'
+    author: Mikus
+    icon: oc-icon-user
+    homepage: ''

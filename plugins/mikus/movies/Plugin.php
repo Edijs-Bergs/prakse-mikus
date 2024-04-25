@@ -27,7 +27,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Mikus\Movies\components\actors' => 'actors'
+            'Mikus\Movies\components\actors' => 'actors',
+            'Mikus\Movies\components\ActorForm' => 'actorform'
         ];
     }
 

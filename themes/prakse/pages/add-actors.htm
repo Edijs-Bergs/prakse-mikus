@@ -1,0 +1,14 @@
+url = "/add-actors"
+layout = "default"
+title = "Add actors"
+
+[actorform]
+
+[session]
+security = "user"
+redirect = "login"
+checkToken = 0
+==
+<h2 class="addactor">Add an Actor</h2>
+
+{% component 'actorform' %}

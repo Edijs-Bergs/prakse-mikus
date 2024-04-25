@@ -5,6 +5,18 @@
             <ul>
                 <li class="{% if this.page.id == 'new-page' %} active {% endif %}"><a href="{{ 'new-page'|page }}" class="nav-link">Home</a></li>
                 <li class="{% if this.page.id == 'homepage' %} active {% endif %}"><a href="{{ 'movies'|page }}" class="nav-link">Movies</a></li>
+                <li class="{% if this.page.id == 'homepage' %} active {% endif %}"><a href="{{ 'add-actors'|page }}" class="nav-link">Add actors</a></li>
+                <li class="{% if this.page.id == 'homepage' %} active {% endif %}"><a href="{{ 'contact'|page }}" class="nav-link">Contact</a></li>
+                <li class="{% if this.page.id == 'homepage' %} active {% endif %}"><a href="{{ 'login'|page }}" class="nav-link">
+                    {% if not user %}
+                        Login
+                    {% else %}
+                        My profile
+                    {% endif %}
+                </a></li>
+                {% if user %}
+                <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
