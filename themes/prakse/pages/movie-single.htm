@@ -2,29 +2,33 @@ url = "/movies/movie/:slug"
 layout = "default"
 title = "Movie single"
 
-[builderDetails]
-modelClass = "Mikus\Movies\Models\Movie"
-identifierValue = "{{ :slug }}"
-modelKeyColumn = "slug"
-displayColumn = "name"
-notFoundMessage = "Record not found"
 ==
-{% set record = builderDetails.record %}
-{% set displayColumn = builderDetails.displayColumn %}
-{% set notFoundMessage = builderDetails.notFoundMessage %}
 
-{% if record %}
-    <h2>{{ record.name }}</h2>
+<?
+    use Mikus\Movies\Models\Movie;
+    function onStart(){
+        $this['movie'] = Movie::where('slug', '=', $this->param('slug'))->first();
+        
+    }
 
-    <img src="{{ record.poster.thumb(200,auto) }}">
 
-    <h2>Year: {{ record.year }}</h2>
+?>
+
+==
+
+
+{% if movie %}
+    <h2>{{ movie.name }}</h2>
+
+    <img src="{{ movie.poster.thumb(200,auto) }}">
+
+    <h2>Year: {{ movie.year }}</h2>
 
     <h2>Description</h2>
-    {{ record.description|raw }}
+    {{ movie.description|raw }}
 
     <h3>Actors</h3>
-    {% for actor in record.actors %}
+    {% for actor in movie.actors %}
         {{ actor.name }}
         {{ actor.lastname }}
     {% endfor %}
@@ -33,7 +37,7 @@ notFoundMessage = "Record not found"
 
     <ul class="gallery">
 
-    {% for image in record.movie_gallery %}
+    {% for image in movie.movie_gallery %}
 
         <li>
 
@@ -47,7 +51,7 @@ notFoundMessage = "Record not found"
 
     <h3>Genres</h3>
 
-    {% for genre in record.genres %}
+    {% for genre in movie.genres %}
         <a href="/projekts/genres/{{ genre.slug }}">{{ genre.genre_title }}</a><br>
     {% endfor %}
 

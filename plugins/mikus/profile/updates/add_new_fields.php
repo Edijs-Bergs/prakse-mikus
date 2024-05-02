@@ -17,7 +17,10 @@ class AddNewFields extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('users');
+        $table->dropDown{[
+            'facebook',
+            'bio'
+        ]};
     }
 
 }

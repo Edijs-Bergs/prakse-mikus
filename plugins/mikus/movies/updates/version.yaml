@@ -24,3 +24,6 @@ v1.0.8:
 v1.0.9:
     - 'Created table mikus_movies_actors_movies'
     - builder_table_create_mikus_movies_actors_movies.php
+v1.0.10:
+    - 'Seed movies'
+    - seed.php

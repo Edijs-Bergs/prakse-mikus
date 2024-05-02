@@ -28,6 +28,10 @@ class Actor extends Model
         ]
     ];
 
+    public $attachOne = [
+        'actorimage' => 'System\Models\File'
+    ];
+
     public function getFullNameAttribute(){
         return $this->name . " " . $this->lastname;
     }
@@ -38,4 +42,5 @@ class Actor extends Model
     public $rules = [
     ];
 
+    protected $fillable = array('name', 'lastname');
 }

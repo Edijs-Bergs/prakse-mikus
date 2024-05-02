@@ -44,6 +44,20 @@ security = "all"
 
         </script>
 
+        <script>
+            jQuery(document).ready(function($){
+                $('.contactform').on('ajaxError', function(event, message){
+                    $('.flash').removeClass('active');
+                    $('.flash.error').addClass('active');
+                });
+
+                $('.contactform').on('ajaxSuccess', function(event, message){
+                    $('.flash').removeClass('active');
+                    $('.flash.success').addClass('active');
+                });
+            });
+        </script>
+
         {% framework extras %}
         {% scripts %}
     </body>
