@@ -1,0 +1,87 @@
+description = "Static Layout"
+
+[session]
+security = "all"
+checkToken = 0
+
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu]
+code = "headermenu"
+
+[staticMenu staticMenu2]
+code = "footermenu"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projekts</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="turbo-visit-control" content="reload" />
+        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    </head>
+    <body class="layout-home">
+
+        <header class="main-header">
+            <div class="container">
+                <h1 class="logo">October Movies</h1>
+                <nav class="main-nav">
+                    {% component 'staticMenu' %}
+                </nav>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content" class="container clearfix">
+            <h1>{{this.page.title}}</h1>
+            {% page %}
+        </section>
+
+        <footer class="main-footer">
+            <div class="container">
+            <nav class="footer-menu">
+                {% component 'staticMenu2' %}
+            </nav>
+            </div>
+        </footer>
+
+        <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/dist/js/app.js'|theme }}"></script>
+
+        <script type="text/javascript">
+
+        jQuery(document).ready(function($){
+            $('.contact-form').on('ajaxError', function(event, message){
+                $('.flash').removeClass('active');
+                $('.flash.error').addClass('active');
+            });
+
+            $('.contact-form').on('ajaxSuccess', function(event, message){
+                $('.flash').removeClass('active');
+                $('.flash.success').addClass('active');
+            });
+        });
+
+        </script>
+
+        <script>
+            jQuery(document).ready(function($){
+                $('.contactform').on('ajaxError', function(event, message){
+                    $('.flash').removeClass('active');
+                    $('.flash.error').addClass('active');
+                });
+
+                $('.contactform').on('ajaxSuccess', function(event, message){
+                    $('.flash').removeClass('active');
+                    $('.flash.success').addClass('active');
+                });
+            });
+        </script>
+
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>

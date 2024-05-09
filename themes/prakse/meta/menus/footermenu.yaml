@@ -1,0 +1,29 @@
+items:
+    -
+        title: 'Movies (movies)'
+        type: cms-page
+        code: ''
+        reference: movies
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Login (login)'
+        type: cms-page
+        code: ''
+        reference: login
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Add actors (add-actors)'
+        type: cms-page
+        code: ''
+        reference: add-actors
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Footer menu'

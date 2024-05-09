@@ -27,3 +27,9 @@ v1.0.9:
 v1.0.10:
     - 'Seed movies'
     - seed.php
+v1.0.11:
+    - 'Updated table mikus_movies_'
+    - builder_table_update_mikus_movies__4.php
+v1.0.12:
+    - 'Updated table mikus_movies_'
+    - builder_table_update_mikus_movies__5.php

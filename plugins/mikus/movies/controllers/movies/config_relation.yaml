@@ -1,0 +1,15 @@
+genres:
+  label: Genre
+  view:
+    list: $/mikus/movies/models/genre/columns.yaml
+    toolbarButtons: add|remove
+  manage:
+    form: $/mikus/movies/models/genre/fields.yaml
+    showCheckboxes: true
+actors:
+  label: actors
+  view:
+    list: $/mikus/movies/models/actor/columns.yaml
+    showSearch: true
+  manage:
+    form: $/mikus/movies/models/actor/fields.yaml

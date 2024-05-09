@@ -1,17 +1,17 @@
-const webpack = require('webpack');
+const { assertSupportedNodeVersion } = require('../src/Engine');
 
-module.exports = {
-    devtool: 'inline-source-map',
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.$': 'jquery',
-        }),
-    ],
-    externals: {
-        // Use external version of jQuery
-        jquery: 'jQuery'
-    },
+module.exports = async () => {
+    // @ts-ignore
+    process.noDeprecation = true;
+
+    assertSupportedNodeVersion();
+
+    const mix = require('../src/Mix').primary;
+
+    require(mix.paths.mix());
+
+    await mix.installDependencies();
+    await mix.init();
+
+    return mix.build();
 };

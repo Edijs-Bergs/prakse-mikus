@@ -46,8 +46,10 @@ fields:
         nameFrom: genre_title
         descriptionFrom: description
         span: auto
-        type: relation
+        type: partial
+        path: field_genre
     actors:
         label: Actors
         span: left
-        type: actorbox
+        type: partial
+        path: field_actor

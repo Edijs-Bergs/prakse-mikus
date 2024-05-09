@@ -87,7 +87,8 @@
 .actorform button,
 .contactform button,
 .col-md-6 button,
-.search button {
+.search button,
+.fmovie button {
     border: 0;
     background-color: red;
     color: white;

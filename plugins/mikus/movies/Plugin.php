@@ -64,7 +64,8 @@ class Plugin extends PluginBase
     {
         return [
             'Mikus\Movies\components\actors' => 'actors',
-            'Mikus\Movies\components\ActorForm' => 'actorform'
+            'Mikus\Movies\components\ActorForm' => 'actorform',
+            'Mikus\Movies\components\FilterMovies' => 'filtermovies'
         ];
     }
 
