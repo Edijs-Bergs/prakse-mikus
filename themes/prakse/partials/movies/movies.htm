@@ -1,0 +1,26 @@
+{% if movies|length %}
+
+    {% for movie in movies %}
+        <div class="moviee-filter">
+            <h3>{{movie.name}}</h3>
+            <div>{{ movie.year }}</div>
+
+            <div>
+                <ul class="genre-filter">
+                    {% for genre in movie.genres %}
+                        <li>{{ genre.genre_title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+
+{% else %}
+
+    <div>
+        <p>
+            There are no movies that match the criteria.
+        </p>
+    </div>
+
+{% endif %}

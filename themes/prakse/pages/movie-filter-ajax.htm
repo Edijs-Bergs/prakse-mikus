@@ -1,0 +1,90 @@
+url = "/ajax-filter"
+layout = "default"
+title = "Filter movies"
+
+==
+<?
+    use Mikus\Movies\Models\Movie;
+    use Mikus\Movies\Models\Genre;
+
+    function onStart() {
+        $this->prepareVars();
+        $this->prepareYears();
+    }
+
+    function onFilterMovies() { $this->prepareVars(); }
+
+    function prepareVars() {
+        $options = post('Filter', []);
+
+        $this['movies'] = Movie::listFrontEnd($options);
+        $this['genres'] = Genre::all();
+        $this['sortOptions'] = Movie::$allowedSortingOptions;
+        $this['pages'] = $this['movies']->lastPage();
+        $this['page'] = $this['movies']->currentPage();
+    }
+
+    function prepareYears() {
+        $movies = Movie::all();
+        $years = [];
+
+        foreach($movies as $movie){
+            $years[] = $movie->year;
+        }
+
+        $years = array_unique($years);
+
+        $this['years'] = $years;
+    }
+?>
+==
+<h2 class="addactor">Filter movies</h2>
+
+<div class="ajax-filter">
+
+    <div>
+        {{ form_ajax('onFilterMovies', { update: { 'movies/movies': '#partialMovies', 'movies/paginate': '#partialPaginate' } }) }}
+            <div id="MoviesFilter">
+                <div>
+                    <label>Genres</label>
+                    {% for genre in genres %}
+                        <div class="field">
+                            <div>
+                                <input type="checkbox" name="Filter[genres][]" value="{{ genre.id }}" />    
+                                <label>{{genre.genre_title}}</label>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="field">
+                <label>Year</label>
+                <select name="Filter[year]">
+                    <option value="">Select Year</option>
+                    {% for year in years|sort %}
+                        <option value="{{year}}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Sorting</label>
+                <select name="Filter[sort]">
+                    {% for code, option in sortOptions %}
+                        <option value="{{code}}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="field" id="partialPaginate">
+                {% partial 'movies/paginate' %}
+            </div>
+        {{ form_close() }}
+    </div>
+
+    <div>
+        <div id="partialMovies">
+            {% partial 'movies/movies' %}
+        </div>
+    </div>
+</div>

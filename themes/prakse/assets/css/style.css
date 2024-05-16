@@ -124,3 +124,19 @@
         background: green;
     }
 }
+
+.ajax-filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genre-filter {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #887f7f;
+}
+
+.moviee-filter {
+    border-bottom: 2px solid #dbb7b7;
+    padding-bottom: 15px;
+}
